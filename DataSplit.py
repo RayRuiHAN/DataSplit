@@ -5,7 +5,7 @@ Raw = input("Name of RawData.csv: ")
 RawName = Raw + '.csv'
 df = pd.read_csv(RawName, parse_dates=['TradingDate'])
 print(df.info())
-input("Enter Any Character To Continue...")
+input("Enter Any Key To Continue...")
 
 path = './' + Raw
 if not os.path.exists(path):
@@ -15,7 +15,7 @@ else:
     print("File Folder Detected in " + path)
 
 FileName = './' + Raw + '/' + '{}{:0>2}{:0>2}.csv'
-print("Processing")
+print("Processing...")
 Count = 0
 for year in df.TradingDate.apply(lambda x: x.year).unique():
     for month in df.TradingDate.apply(lambda x: x.month).unique():
@@ -26,4 +26,4 @@ for year in df.TradingDate.apply(lambda x: x.year).unique():
                 Count = Count+1
 
 print("All Done for " + Count + "File(s)")
-
+input("Enter Any Key To End")
