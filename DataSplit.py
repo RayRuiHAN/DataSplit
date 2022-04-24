@@ -25,5 +25,5 @@ for year in df.TradingDate.apply(lambda x: x.year).unique():
                 view.to_csv(FileName.format(year, month, day))
                 Count = Count+1
 
-print("All Done for " + Count + "File(s)")
+print("All Done for " , Count, " File(s)")
 input("Enter Any Key To End")
